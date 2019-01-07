@@ -10,3 +10,21 @@
     </form>
 </div>
 
+<h2>Not devoured</h2>
+<ol>
+  {{#each burger}}
+    {{#unless devoured}}
+    <li>{{burger_name}}</li>
+      <button type="submit" class="devour">Devour it!</button>
+    {{/unless}}
+  {{/each}}
+</ol>
+
+<h2>Devoured</h2>
+<ol>
+  {{#each burger}}
+    {{#if devoured}}
+    <li>{{burger_name}}</li>
+    {{/if}}
+  {{/each}}
+</ol>
