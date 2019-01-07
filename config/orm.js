@@ -24,9 +24,9 @@ var orm = {
             cb(result);
           });
     },
-    insertOne: function(table, cols, vals, cb){
-        var queryString = "INSERT INTO ?? (??) VALUES (?, ?)";
-        connection.query(queryString, [table ,cols.toString(), vals.toString()], function(err, result) {
+    insertOne: function(table, objColVals, cb){
+        var queryString = "INSERT INTO ?? SET ?";
+        connection.query(queryString, [table, objToSql(objColVals)], function(err, result) {
             if (err) throw err;
             console.log(result);
             cb(result);

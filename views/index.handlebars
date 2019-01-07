@@ -3,8 +3,8 @@
 <h1>Eat-Da-Burger</h1>
 
 <div id="inputText">
-    <form>
-        <input type="text" name="Message" id="message"><br>
+    <form class= "create-form">
+        <input type="text" name="Message" id="burgerName"><br>
         <br>
         <input type="submit" value="Submit" id="submit"><br>
     </form>
@@ -15,7 +15,7 @@
   {{#each burger}}
     {{#unless devoured}}
     <li>{{burger_name}}</li>
-      <button type="submit" class="devour">Devour it!</button>
+      <button type="submit" class="devour" data-id="{{id}}"> Devour it!</button>
     {{/unless}}
   {{/each}}
 </ol>
