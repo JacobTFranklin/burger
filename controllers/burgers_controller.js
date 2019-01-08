@@ -5,7 +5,7 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
-    burger.selectAll(["burger_name", "devoured"], function(data) {
+    burger.selectAll(["id", "burger_name", "devoured"], function(data) {
       var hbObj = {burger: data};
       console.log(hbObj);
       res.render("index", hbObj);

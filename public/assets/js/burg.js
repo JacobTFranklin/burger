@@ -1,8 +1,10 @@
 $(function() {
     $(".devour").on("click", function(event) {
+        console.log(this);
       var id = $(this).data("id");
+      console.log(id);
       var newDevoured = {
-        devoured: true
+        devoured: 1
       };
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
@@ -20,9 +22,10 @@ $(function() {
     $(".create-form").on("submit", function(event) {
       event.preventDefault();
       var newBurger = {
-        name: $("#burgerName").val().trim(),
-        devoured: false
+        burger_name: $("#burgerName").val().trim(),
+        devoured: 0
       };
+      console.log(newBurger);
       // Send the POST request.
       $.ajax("/api/burgers", {
         type: "POST",
