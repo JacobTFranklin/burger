@@ -8,3 +8,7 @@ li {
 body {
     background-color: rgb(247, 191, 89);
 }
+
+.devouredBurgs {
+    background: grey;
+}

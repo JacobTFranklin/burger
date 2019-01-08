@@ -1,30 +1,60 @@
-<img src="assets/images/burger.jfif" alt="Burger">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
 
-<h1>Eat-Da-Burger</h1>
+    <center><img src="assets/images/burger2.jfif" id = "burgerpic" alt="Burger">
+    <h1>Eat-Da-Burger</h1></center>
 
-<div id="inputText">
-    <form class= "create-form">
-        <input type="text" name="Message" id="burgerName"><br>
-        <br>
-        <input type="submit" value="Submit" id="submit"><br>
-    </form>
+</div>
+</div>
+</div>
+<br>
+<br>
+
+
+<div class= "container">
+<div class= "row">
+
+<div class="col-md-4">
+
+    <center><h2>Not devoured</h2></center>
+        <ol>
+        {{#each burger}}
+            {{#unless devoured}}
+            <li>{{burger_name}}</li>
+            <button type="submit" class="devour" data-id="{{id}}"> Devour it!</button>
+            {{/unless}}
+        {{/each}}
+        </ol>
+
 </div>
 
-<h2>Not devoured</h2>
-<ol>
-  {{#each burger}}
-    {{#unless devoured}}
-    <li>{{burger_name}}</li>
-      <button type="submit" class="devour" data-id="{{id}}"> Devour it!</button>
-    {{/unless}}
-  {{/each}}
-</ol>
+<div class= "col-md-4">
 
-<h2>Devoured</h2>
-<ol>
-  {{#each burger}}
-    {{#if devoured}}
-    <li>{{burger_name}}</li>
-    {{/if}}
-  {{/each}}
-</ol>
+    <center>
+    <div id="inputText">
+        <form class= "create-form">
+            <input type="text" name="Message" id="burgerName"><br>
+            <br>
+            <input type="submit" value="Submit" id="submit"><br>
+        </form>
+    </div>
+    </center>
+
+</div>
+
+<div class= "col-md-4">
+
+    <center><h2>Devoured</h2></center>
+        <ol>
+        {{#each burger}}
+            {{#if devoured}}
+            <li class="devouredBurgs">{{burger_name}}</li>
+            {{/if}}
+        {{/each}}
+        </ol>
+
+</div>
+
+</div>
+</div>

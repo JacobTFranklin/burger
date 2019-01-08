@@ -25,16 +25,16 @@ var orm = {
           });
     },
     insertOne: function(table, objColVals, cb){
-        var queryString = "INSERT INTO ?? SET ?";
-        connection.query(queryString, [table, objToSql(objColVals)], function(err, result) {
+        var queryString = "INSERT INTO ?? VALUES (?,?,?)";
+        connection.query(queryString, [table, null, objColVals.burger_name, objColVals.devoured], function(err, result) {
             if (err) throw err;
             console.log(result);
             cb(result);
           });
     },
     updateOne: function(table, objColVals, condition, cb){
-        var queryString = "UPDATE ?? SET ?? = ?, ?? = ?, WHERE ?";
-        connection.query(queryString, [table, objToSql(objColVals), condition], function(err, result) {
+        var queryString = "UPDATE ?? SET ? WHERE ?";
+        connection.query(queryString, [table, objColVals, condition], function(err, result) {
             if (err) throw err;
             console.log(result);
             cb(result);
